@@ -3,9 +3,9 @@ class Negociacao {
     // convenção _
     constructor(data, quantidade, valor) {
         // programação defensiva
-        this._data = new Date();
-        this._quantidade = 1;
-        this._valor = 0.0;
+        this._data = new Date(data);
+        this._quantidade = quantidade;
+        this._valor = valor;
         Object.freeze(this);
     }
 

@@ -83,3 +83,53 @@ let aprovados = avaliacoes
 
 console.log(aprovados);
 
+//Data
+let diaMesAno = negociacao.data.getDate()
+    + '/' + (negociacao.data.getMonth() + 1)
+    + '/' + negociacao.data.getFullYear();
+
+console.log(diaMesAno);
+
+ /*  let data = new Date(this._inputData.value.replace(/-/g, ','));
+        let data2 = new Date(this._inputData.value + ' 00:00:00');
+         */
+
+// dado e comportamento caminham juntos, mesmo que esse comportamento/regra esteja no construtor.
+class Codigo {
+
+    constructor(texto) {
+
+        if(!this._valida(texto)) throw new Error(`O texto ${texto} não é um código válido`);
+        this._texto = texto;        
+    }
+
+    _valida(texto) {
+
+        return /\D{3}-\D{2}-\d{2}/.test(texto);
+    }
+
+    get texto() {
+
+        return this._texto;
+    }
+}
+
+let codigo1 = new Codigo('GWZ-JJ-12'); // válido
+console.log(codigo1.texto);
+let codigo2 = new Codigo('1X1-JJ-12'); // inválido
+console.log(codigo2.texto);
+
+// Implemente o código que cria uma nova lista que é a junção dos elementos de listaDeNomes1 e listaDeNomes2.
+
+function exibeNoConsole(lista) {
+    lista.forEach(item => console.log(item));
+}
+
+let listaDeNomes1 = ['Flávio', 'Rogers', 'Júlia'];
+let listaDeNomes2 = ['Vieira', 'Fernanda', 'Gerson'];
+
+let listaCompleta = [...listaDeNomes1, ...listaDeNomes2];
+exibeNoConsole(listaCompleta);
+
+// a função concat aceita receber um número infinito de parâmetros, inclusive aqueles que não são um array. 
+exibeNoConsole([].concat(listaDeNomes1, listaDeNomes2, 'Rômulo'));
