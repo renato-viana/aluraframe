@@ -1,5 +1,6 @@
 class DateHelper {
 
+  //  o constructor é chamando quando criamos uma instância de uma classe com o operador new.
     constructor() {
       throw new Error('DateHelper não pode ser instanciada!');
     }
